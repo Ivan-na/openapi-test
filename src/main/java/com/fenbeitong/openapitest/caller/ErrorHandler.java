@@ -15,18 +15,26 @@ import java.io.IOException;
  **/
 public class ErrorHandler implements ResponseErrorHandler {
 
-    /* (non-Javadoc)
+    /**
+     * @author Created by ivan on 下午8:57 18-11-22.
+     * <p>//TODO hasError
+     * @param response : 
+     * @return boolean
      * @see org.springframework.web.client.ResponseErrorHandler#hasError(org.springframework.http.client.ClientHttpResponse)
-     */
+     **/
     @Override
     public boolean hasError(ClientHttpResponse response)
             throws IOException {
         return false;
     }
 
-    /* (non-Javadoc)
+    /**
+     * @author Created by ivan on 下午8:57 18-11-22.
+     * <p>//TODO handleError
+     * @param response : 
+     * @return void
      * @see org.springframework.web.client.ResponseErrorHandler#handleError(org.springframework.http.client.ClientHttpResponse)
-     */
+     **/
     @Override
     public void handleError(ClientHttpResponse response)
             throws IOException {

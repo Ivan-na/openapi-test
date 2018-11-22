@@ -50,7 +50,7 @@ public class TokenApi {
     @ApiOperation(value = "API 鉴权接口，颁发Token", notes = "根据项目配置参数获取企业访问Token")
     @PostMapping(value = "/getToken", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public String getAccessToken() {
-        Map<String, String> req = new HashMap<String, String>();
+        Map<String, String> req = new HashMap<String, String>(3);
         req.put("app_id", fbtConfig.getAppId());
         req.put("app_key", fbtConfig.getAppKey());
         req.put("app_type", fbtConfig.getAppType());
@@ -80,7 +80,7 @@ public class TokenApi {
     public String getAccessTokenWithParam(@RequestParam String app_id,
                                           @RequestParam String app_key,
                                           String app_type) {
-        Map<String, String> req = new HashMap<String, String>();
+        Map<String, String> req = new HashMap<String, String>(3);
         req.put("app_id", app_id);
         req.put("app_key", app_key);
         req.put("app_type", app_type);

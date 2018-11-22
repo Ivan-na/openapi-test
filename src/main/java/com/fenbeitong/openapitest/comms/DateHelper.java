@@ -269,7 +269,8 @@ public class DateHelper extends DateUtils {
         cal.add(Calendar.DATE, -dayOfWeek + num);
         cal.set(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DATE), 0, 0, 0);
         long mills = cal.getTimeInMillis() / 1000;
-        cal.setTimeInMillis(mills * 1000); // 忽略毫秒数
+        // 忽略毫秒数
+        cal.setTimeInMillis(mills * 1000);
         return cal;
     }
 
