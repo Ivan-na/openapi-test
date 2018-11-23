@@ -13,7 +13,7 @@ import lombok.Data;
  * Created by ivan on 18-11-22 - 下午5:28.
  **/
 @Data
-public class CreateRequest {
+public class CreateFrequentRequest {
     /**
      "birthDate": "1990-02-02",
      "category": 40,

@@ -8,5 +8,5 @@ package com.fenbeitong.openapitest.models.frequent;
  * @version 1.0
  * Created by ivan on 18-11-22 - 下午6:31.
  **/
-public class DeleteResponse {
+public class DeleteFrequentResponse {
 }

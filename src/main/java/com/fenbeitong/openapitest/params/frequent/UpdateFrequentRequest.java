@@ -13,7 +13,7 @@ import lombok.Data;
  * Created by ivan on 18-11-22 - 下午6:20.
  **/
 @Data
-public class UpdateRequest {
+public class UpdateFrequentRequest {
     /**
      * type : 1
      * frequentIdType : 1

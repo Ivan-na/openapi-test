@@ -31,7 +31,6 @@ import java.io.UnsupportedEncodingException;
 @RestController
 @Api(value = "第三方常用联系人接口", tags = "常用联系人")
 public class FrequentApi {
-    private static final Logger LOGGER = LoggerFactory.getLogger(FrequentApi.class);
 
     private static final String CREATE_URL = "/open/api/third/frequent/create";
     private static final String UPDATE_URL = "/open/api/third/frequent/update";
@@ -50,9 +49,9 @@ public class FrequentApi {
     }
 
     /**
-     * @param createRequest :
+     * @param createFrequentRequest :
      * @param signKey       :
-     * @return com.fenbeitong.openapitest.models.BizCommonModel<com.fenbeitong.openapitest.models.frequent.CreateResponse>
+     * @return com.fenbeitong.openapitest.models.BizCommonModel<com.fenbeitong.openapitest.models.frequent.CreateFrequentResponse>
      * @author Created by ivan on 下午7:56 18-11-22.
      * <p>添加常用联系人</p>
      **/
@@ -62,20 +61,19 @@ public class FrequentApi {
             @ApiImplicitParam(paramType = "form", name = "signKey", value = "签名密钥", required = false)
     })
     @PostMapping(value = "/createThirdFrenqent", produces = MediaType.APPLICATION_JSON_UTF8_VALUE, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public BizCommonModel<CreateResponse> createThirdFrenqent(@ApiParam(value = "创建常用联系人参数") @RequestBody BizCommonParams<CreateRequest> createRequest, String signKey) throws UnsupportedEncodingException {
-        LOGGER.info(createRequest.getData().toString());
+    public BizCommonModel<CreateFrequentResponse> createThirdFrenqent(@ApiParam(value = "创建常用联系人参数") @RequestBody BizCommonParams<CreateFrequentRequest> createFrequentRequest, String signKey) throws UnsupportedEncodingException {
         if (StringUtils.isNotBlank(signKey)) {
             apiCaller.setSignKey(signKey);
         } else {
             apiCaller.setSignKey(fbtConfig.getSignKey());
         }
-        return apiCaller.postRequest(fbtConfig.getBaseUrl() + CREATE_URL, createRequest, new  BizCommonModel<CreateResponse>(), false);
+        return apiCaller.postRequest(fbtConfig.getBaseUrl() + CREATE_URL, createFrequentRequest, new  BizCommonModel<CreateFrequentResponse>(), false);
     }
 
     /**
-     * @param updateRequest :
+     * @param updateFrequentRequest :
      * @param signKey       :
-     * @return com.fenbeitong.openapitest.models.BizCommonModel<com.fenbeitong.openapitest.models.frequent.UpdateResponse>
+     * @return com.fenbeitong.openapitest.models.BizCommonModel<com.fenbeitong.openapitest.models.frequent.UpdateFrequentReponse>
      * @author Created by ivan on 下午7:57 18-11-22.
      * <p>更新常用联系人</p>
      **/
@@ -85,19 +83,19 @@ public class FrequentApi {
             @ApiImplicitParam(paramType = "form", name = "signKey", value = "签名密钥", required = false)
     })
     @PostMapping(value = "/updateThirdFrenqent", produces = MediaType.APPLICATION_JSON_UTF8_VALUE, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public BizCommonModel<UpdateResponse> updateThirdFrenqent(@ApiParam(value = "更新常用联系人参数") @RequestBody BizCommonParams<UpdateRequest> updateRequest, String signKey) throws UnsupportedEncodingException {
+    public BizCommonModel<UpdateFrequentResponse> updateThirdFrenqent(@ApiParam(value = "更新常用联系人参数") @RequestBody BizCommonParams<UpdateFrequentRequest> updateFrequentRequest, String signKey) throws UnsupportedEncodingException {
         if (StringUtils.isNotBlank(signKey)) {
             apiCaller.setSignKey(signKey);
         } else {
             apiCaller.setSignKey(fbtConfig.getSignKey());
         }
-        return apiCaller.postRequest(fbtConfig.getBaseUrl() + UPDATE_URL, updateRequest, new BizCommonModel<UpdateResponse>(), false);
+        return apiCaller.postRequest(fbtConfig.getBaseUrl() + UPDATE_URL, updateFrequentRequest, new BizCommonModel<UpdateFrequentResponse>(), false);
     }
 
     /**
-     * @param deleteRequest :
+     * @param deleteFrequentRequest :
      * @param signKey       :
-     * @return com.fenbeitong.openapitest.models.BizCommonModel<com.fenbeitong.openapitest.models.frequent.DeleteResponse>
+     * @return com.fenbeitong.openapitest.models.BizCommonModel<com.fenbeitong.openapitest.models.frequent.DeleteFrequentReponse>
      * @author Created by ivan on 下午7:57 18-11-22.
      * <p>删除常用联系人</p>
      **/
@@ -107,19 +105,19 @@ public class FrequentApi {
             @ApiImplicitParam(paramType = "form", name = "signKey", value = "签名密钥", required = false)
     })
     @PostMapping(value = "/deleteThirdFrenqent", produces = MediaType.APPLICATION_JSON_UTF8_VALUE, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public BizCommonModel<DeleteResponse> deleteThirdFrenqent(@ApiParam(value = "删除常用联系人参数", type = "form") @RequestBody BizCommonParams<DeleteRequest> deleteRequest, String signKey) throws UnsupportedEncodingException {
+    public BizCommonModel<DeleteFrequentResponse> deleteThirdFrenqent(@ApiParam(value = "删除常用联系人参数", type = "form") @RequestBody BizCommonParams<DeleteFrequentRequest> deleteFrequentRequest, String signKey) throws UnsupportedEncodingException {
         if (StringUtils.isNotBlank(signKey)) {
             apiCaller.setSignKey(signKey);
         } else {
             apiCaller.setSignKey(fbtConfig.getSignKey());
         }
-        return apiCaller.postRequest(fbtConfig.getBaseUrl() + DELETE_URL, deleteRequest, new BizCommonModel<DeleteResponse>(), false);
+        return apiCaller.postRequest(fbtConfig.getBaseUrl() + DELETE_URL, deleteFrequentRequest, new BizCommonModel<DeleteFrequentResponse>(), false);
     }
 
     /**
-     * @param queryRequest :
+     * @param queryFrequentRequest :
      * @param signKey      :
-     * @return com.fenbeitong.openapitest.models.BizCommonList<com.fenbeitong.openapitest.models.frequent.QueryResponse>
+     * @return com.fenbeitong.openapitest.models.BizCommonList<com.fenbeitong.openapitest.models.frequent.QueryFrequentReponse>
      * @author Created by ivan on 下午7:57 18-11-22.
      * <p>查询常用联系人列表</p>
      **/
@@ -129,19 +127,19 @@ public class FrequentApi {
             @ApiImplicitParam(paramType = "form", name = "signKey", value = "签名密钥", required = false)
     })
     @PostMapping(value = "/queryThirdFrenqent", produces = MediaType.APPLICATION_JSON_UTF8_VALUE, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public BizCommonList<QueryResponse> queryThirdFrenqent(@ApiParam(value = "查询常用联系人参数", type = "form") @RequestBody BizCommonParams<QueryRequest> queryRequest, String signKey) throws UnsupportedEncodingException {
+    public BizCommonList<QueryFrequentResponse> queryThirdFrenqent(@ApiParam(value = "查询常用联系人参数", type = "form") @RequestBody BizCommonParams<QueryFrequentRequest> queryFrequentRequest, String signKey) throws UnsupportedEncodingException {
         if (StringUtils.isNotBlank(signKey)) {
             apiCaller.setSignKey(signKey);
         } else {
             apiCaller.setSignKey(fbtConfig.getSignKey());
         }
-        return  apiCaller.getListByPostRequest(fbtConfig.getBaseUrl() + QUERY_URL, queryRequest, new BizCommonList<QueryResponse>(), null);
+        return  apiCaller.getListByPostRequest(fbtConfig.getBaseUrl() + QUERY_URL, queryFrequentRequest, new BizCommonList<QueryFrequentResponse>(), null);
     }
 
     /**
-     * @param getRequest :
+     * @param getFrequentRequest :
      * @param signKey    :
-     * @return com.fenbeitong.openapitest.models.BizCommonModel<com.fenbeitong.openapitest.models.frequent.GetResponse>
+     * @return com.fenbeitong.openapitest.models.BizCommonModel<com.fenbeitong.openapitest.models.frequent.GetFrequentReponse>
      * @author Created by ivan on 下午7:57 18-11-22.
      * <p>查询常用联系人详情</p>
      **/
@@ -151,13 +149,12 @@ public class FrequentApi {
             @ApiImplicitParam(paramType = "form", name = "signKey", value = "签名密钥", required = false)
     })
     @PostMapping(value = "/getThirdFrenqent", produces = MediaType.APPLICATION_JSON_UTF8_VALUE, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public BizCommonModel<GetResponse> getThirdFrenqent(@ApiParam(value = "查询常用联系人参数", type = "form") @RequestBody BizCommonParams<GetRequest> getRequest, String signKey) throws UnsupportedEncodingException {
-        LOGGER.info(getRequest.getData().toString());
+    public BizCommonModel<GetFrequentResponse> getThirdFrenqent(@ApiParam(value = "查询常用联系人参数", type = "form") @RequestBody BizCommonParams<GetFrequentRequest> getFrequentRequest, String signKey) throws UnsupportedEncodingException {
         if (StringUtils.isNotBlank(signKey)) {
             apiCaller.setSignKey(signKey);
         } else {
             apiCaller.setSignKey(fbtConfig.getSignKey());
         }
-        return apiCaller.getByPostRequest(fbtConfig.getBaseUrl() + GET_URL, getRequest, new BizCommonModel<GetResponse>(), null);
+        return apiCaller.getByPostRequest(fbtConfig.getBaseUrl() + GET_URL, getFrequentRequest, new BizCommonModel<GetFrequentResponse>(), null);
     }
 }

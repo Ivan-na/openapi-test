@@ -4,15 +4,15 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 /**
- * UpdateResponse
+ * CreateResponse
  * <p> TODO
  *
  * @author ivan
  * @version 1.0
- * Created by ivan on 18-11-22 - 下午6:20.
+ * Created by ivan on 18-11-22 - 下午5:51.
  **/
 @Data
-public class UpdateResponse {
-    @ApiModelProperty(value = "主键id", required = true)
+public class CreateFrequentResponse {
+    @ApiModelProperty(value = "分贝员工ID", required = true)
     private String employee_id;
 }

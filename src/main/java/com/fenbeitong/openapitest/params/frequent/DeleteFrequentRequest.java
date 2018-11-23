@@ -15,7 +15,7 @@ import java.util.List;
  * Created by ivan on 18-11-22 - 下午6:32.
  **/
 @Data
-public class DeleteRequest {
+public class DeleteFrequentRequest {
     /**
      * frequentIdType : 1
      * idList : ["5820915c5f281a38552d6129","582192e95f281a0364465210"]

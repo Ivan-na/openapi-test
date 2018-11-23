@@ -12,7 +12,7 @@ import lombok.Data;
  * Created by ivan on 18-11-22 - 下午6:38.
  **/
 @Data
-public class QueryResponse {
+public class QueryFrequentResponse {
 
     /**
      * category : 11

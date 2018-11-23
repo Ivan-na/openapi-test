@@ -4,7 +4,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 /**
- * GetResponse
+ * GetFrequentResponse
  * <p> TODO
  *
  * @author ivan
@@ -12,7 +12,7 @@ import lombok.Data;
  * Created by ivan on 18-11-22 - 下午7:44.
  **/
 @Data
-public class GetResponse {
+public class GetFrequentResponse {
 
     /**
      * category : 11
@@ -84,7 +84,7 @@ public class GetResponse {
     @ApiModelProperty(value = "使用次数", example = "0", required = false)
     private int useNum;
     @ApiModelProperty(value = "1:身份证 2:护照 3:回乡证 4:台胞证 5:港澳通行证 6:大陆居民往来台湾通行证", example = "", required = false)
-    private QueryResponse.IdTypeEntityBean idTypeEntity;
+    private QueryFrequentResponse.IdTypeEntityBean idTypeEntity;
     @ApiModelProperty(value = "", example = "2***1", required = false)
     private String idNumber;
     @ApiModelProperty(value = "", example = "运维部", required = false)
