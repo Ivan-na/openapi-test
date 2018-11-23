@@ -24,4 +24,7 @@ public class BizCommonModel<T> extends CommonModel<T> {
     private String msg;
     @ApiModelProperty(value = "结果数据", required = false)
     private T data;
+
+    @ApiModelProperty(value = "响应类型", required = false)
+    private String type;
 }

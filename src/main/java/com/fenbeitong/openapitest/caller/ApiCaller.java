@@ -55,7 +55,26 @@ public class ApiCaller<T extends BizCommonParams, R> {
         Map<String, String> urlParameters = new HashMap<String, String>();
         urlParameters = ValueHelper.transBean2Map(paramData, urlParameters, ignores);
         url = expandUrl(url, urlParameters);
-
+        // call
+        String resultString = RestTemplateUtil.get(url, String.class, null);
+        LOGGER.info("Get Single Request: " + url + " | Response: " + resultString);
+        // return
+        return (BizCommonModel<R>) (gson.fromJson(resultString, model.getClass()));
+    }
+    /**
+     * @author Created by ivan on 下午3:22 18-11-23.
+     * <p>//TODO getByPostRequest
+     * @param url : 
+     * @param param : 
+     * @param model : 
+     * @param extraParam : 
+     * @return com.fenbeitong.openapitest.models.BizCommonModel<R>
+     **/
+    public BizCommonModel<R> getByPostRequest(String url, T param, R model, Map<String, String> extraParam) throws UnsupportedEncodingException {
+        Gson gson = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES).create();
+        // set common
+        T paramData = this.initParam(param);
+        LOGGER.info("Post Request: " + url + " | Params: " + gson.toJson(paramData));
         // put body
         LinkedMultiValueMap<String, String> inputParameter = new LinkedMultiValueMap<String, String>();
         Map<String, String> valueMap = ValueHelper.transBean2Map(paramData, new HashMap<String, String>(), ignores);
@@ -64,10 +83,35 @@ public class ApiCaller<T extends BizCommonParams, R> {
             inputParameter.setAll(extraParam);
         }
         // call
-        String resultString = RestTemplateUtil.get(url, String.class, inputParameter);
+        String resultString = RestTemplateUtil.post(url, String.class, null,inputParameter);
         LOGGER.info("Get Single Request: " + url + " | Response: " + resultString);
         // return
         return (BizCommonModel<R>) (gson.fromJson(resultString, model.getClass()));
+    }
+    /**
+     * @author Created by ivan on 下午3:23 18-11-23.
+     * <p>//TODO getListRequest
+     * @param url : 
+     * @param param : 
+     * @param model : 
+     * @param extraParam : 
+     * @return com.fenbeitong.openapitest.models.BizCommonList<R>
+     **/
+    public BizCommonList<R> getListRequest(String url, T param, R model, Map<String, String> extraParam) throws UnsupportedEncodingException {
+        Gson gson = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES).create();
+        // set commom
+        T paramData = this.initParam(param);
+        LOGGER.info("Get List Request: " + url + " | Params: " + gson.toJson(paramData));
+        // expend url
+        Map<String, String> urlParameters = new HashMap<String, String>();
+        urlParameters = ValueHelper.transBean2Map(paramData, urlParameters, ignores);
+        url = expandUrl(url, urlParameters);
+
+        // call
+        String resultString = RestTemplateUtil.get(url, String.class, null);
+        LOGGER.info("Get Single Request: " + url + " | Response: " + resultString);
+        // return
+        return (BizCommonList<R>) (gson.fromJson(resultString, model.getClass()));
     }
 
     /**
@@ -80,16 +124,11 @@ public class ApiCaller<T extends BizCommonParams, R> {
      * <p>//TODO getListRequest
      **/
     @SuppressWarnings(value = "unchecked")
-    public BizCommonList<R> getListRequest(String url, T param, R model, Map<String, String> extraParam) throws UnsupportedEncodingException {
+    public BizCommonList<R> getListByPostRequest(String url, T param, R model, Map<String, String> extraParam) throws UnsupportedEncodingException {
         Gson gson = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES).create();
-        // set common
+        // set commom
         T paramData = this.initParam(param);
-        LOGGER.info("Post Request: " + url + " | Params: " + gson.toJson(paramData));
-
-        // expend url
-        Map<String, String> urlParameters = new HashMap<String, String>();
-        urlParameters = ValueHelper.transBean2Map(paramData, urlParameters, ignores);
-        url = expandUrl(url, urlParameters);
+        LOGGER.info("Get List Request: " + url + " | Params: " + gson.toJson(paramData));
 
         // put body
         LinkedMultiValueMap<String, String> inputParameter = new LinkedMultiValueMap<String, String>();
@@ -99,7 +138,7 @@ public class ApiCaller<T extends BizCommonParams, R> {
             inputParameter.setAll(extraParam);
         }
         // call
-        String resultString = RestTemplateUtil.get(url, String.class, inputParameter);
+        String resultString = RestTemplateUtil.post(url, String.class, null, inputParameter);
         LOGGER.info("Get Single Request: " + url + " | Response: " + resultString);
         // return
         return (BizCommonList<R>) (gson.fromJson(resultString, model.getClass()));
@@ -116,7 +155,8 @@ public class ApiCaller<T extends BizCommonParams, R> {
      * <p>//TODO postRequest
      **/
     @SuppressWarnings(value = "unchecked")
-    public BizCommonModel<R> postRequest(String url, T param, R model, boolean jsonFlag) throws UnsupportedEncodingException {
+    public BizCommonModel<R> postRequest(String url, T param, R model, boolean jsonFlag) throws
+            UnsupportedEncodingException {
         Gson gson = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES).create();
         // Set Common Part
         T paramData = this.initParam(param);
@@ -148,7 +188,7 @@ public class ApiCaller<T extends BizCommonParams, R> {
      **/
     private T initParam(T param) throws UnsupportedEncodingException {
         param.setTimestamp(System.currentTimeMillis());
-        param.setSign(this.generateSign(String.valueOf(param.getTimestamp()), param.toJsonDataWithLowerCase(), this.signKey));
+        param.setSign(this.generateSign(String.valueOf(param.getTimestamp()), param.getData().toString(), this.signKey));
         return param;
     }
 

@@ -28,11 +28,11 @@ public class DeleteRequest {
     private int frequentIdType;
     @ApiModelProperty(value = "frequentIdType = 2时 必填  \ntype = 1 时  代表companyId  ownerId 为分贝企业数据 type = 2 时  代表companyId  ownerId 为第三方企业对应数据 ", example = "1", required = false)
     private int type;
-    @ApiModelProperty(value = "frequentIdType = 2时 必填 ", example = "1111", required = false)
+    @ApiModelProperty(value = "frequentIdType = 2时 必填 ", example = "5747fbc10f0e60e0709d8d7d", required = false)
     private String companyId;
-    @ApiModelProperty(value = "frequentIdType = 2时 必填 ", example = "1111", required = false)
+    @ApiModelProperty(value = "frequentIdType = 2时 必填 ", example = "59bf74f423445f31bd64bc5c", required = false)
     private String ownerId;
-    @ApiModelProperty(value = "必填", example = "", required = true)
+    @ApiModelProperty(value = "必填", example = "5bf7adff23445f4b032e5a49", required = true)
     private List<String> idList;
 
     @Override

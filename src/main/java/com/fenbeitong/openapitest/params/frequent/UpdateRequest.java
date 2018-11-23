@@ -41,9 +41,9 @@ public class UpdateRequest {
 
     @ApiModelProperty(value = "1:代表分贝公司, 2:代表第三方企业;  \n注: type=2时,代表所示字段均为第三方数据 ", required = true, example = "1")
     private int type;
-    @ApiModelProperty(value = "可不传  \n但在查询联系人详情/修改/删除等操作时 需要根绝分贝联系人ID进行操作。不能重复", required = false, example = "11111")
+    @ApiModelProperty(value = "可不传  \n但在查询联系人详情/修改/删除等操作时 需要根绝分贝联系人ID进行操作。不能重复", required = false, example = "1")
     private int frequentIdType;
-    @ApiModelProperty(value = "联系人ID  必填", example = "58734b2e5f281a41b304181f", required = true)
+    @ApiModelProperty(value = "联系人ID  必填", example = "5bf7791f23445f2fb1729905", required = true)
     private String id;
     @ApiModelProperty(value = "同行人姓名  \n当frequentType=1时  则必填", required = false, example = "李嘉伦")
     private String name;
@@ -57,7 +57,7 @@ public class UpdateRequest {
     private String phoneNum;
     @ApiModelProperty(value = "是否为员工  \n必填 ，如果是从组织架构入口进入则为true,反之则为false ", required = true, example = "false")
     private boolean employeeFlag;
-    @ApiModelProperty(value = "同行人在组织架构的id ，当employeeFlag为false时，则可以不进行传递。为false时是从非组织架构选择添加的人员", required = false, example = "123123")
+    @ApiModelProperty(value = "同行人在组织架构的id ，当employeeFlag为false时，则可以不进行传递。为false时是从非组织架构选择添加的人员", required = false, example = "59bf74f423445f31bd64bc5c")
     private String selectedEmployeeId;
     @ApiModelProperty(value = "必填", required = true, example = "4*******************X")
     private String idNumber;
@@ -77,9 +77,9 @@ public class UpdateRequest {
     private String nationalityName;
     @ApiModelProperty(value = "1:国内 2:国际  \n必填 默认是1", required = true, example = "1")
     private int frequentType;
-    @ApiModelProperty(value = "必填", required = true, example = "58734b2e5f281a41b304181f")
+    @ApiModelProperty(value = "必填", required = true, example = "5747fbc10f0e60e0709d8d7d")
     private String companyId;
-    @ApiModelProperty(value = "当前登录用户ID 必填，为第三方用户ID", required = true, example = "58734b2e5f281a41b304181f")
+    @ApiModelProperty(value = "当前登录用户ID 必填，为第三方用户ID", required = true, example = "59bf74f423445f31bd64bc5c")
     private String ownerId;
     @ApiModelProperty(value = "1：因公  \n必填", required = true, example = "1")
     private int useType;
