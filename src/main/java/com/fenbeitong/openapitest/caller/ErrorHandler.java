@@ -23,8 +23,7 @@ public class ErrorHandler implements ResponseErrorHandler {
      * @see org.springframework.web.client.ResponseErrorHandler#hasError(org.springframework.http.client.ClientHttpResponse)
      **/
     @Override
-    public boolean hasError(ClientHttpResponse response)
-            throws IOException {
+    public boolean hasError(ClientHttpResponse response) {
         return false;
     }
 
@@ -36,8 +35,7 @@ public class ErrorHandler implements ResponseErrorHandler {
      * @see org.springframework.web.client.ResponseErrorHandler#handleError(org.springframework.http.client.ClientHttpResponse)
      **/
     @Override
-    public void handleError(ClientHttpResponse response)
-            throws IOException {
+    public void handleError(ClientHttpResponse response) {
 
     }
 

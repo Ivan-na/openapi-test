@@ -169,7 +169,7 @@ public class DateHelper extends DateUtils {
      * @return long 天数
      */
     public static long pastDays(Date date) {
-        long t = new Date().getTime() - date.getTime();
+        long t = System.currentTimeMillis() - date.getTime();
         return t / (24 * 60 * 60 * 1000);
     }
 
@@ -180,7 +180,7 @@ public class DateHelper extends DateUtils {
      * @return long 小时数
      */
     public static long pastHour(Date date) {
-        long t = new Date().getTime() - date.getTime();
+        long t = System.currentTimeMillis() - date.getTime();
         return t / (60 * 60 * 1000);
     }
 
@@ -191,7 +191,7 @@ public class DateHelper extends DateUtils {
      * @return long 分钟
      */
     public static long pastMinutes(Date date) {
-        long t = new Date().getTime() - date.getTime();
+        long t = System.currentTimeMillis() - date.getTime();
         return t / (60 * 1000);
     }
 
@@ -323,7 +323,6 @@ public class DateHelper extends DateUtils {
      * @param cal1
      * @param cal2
      * @return
-     * @see isSameDay(Date date1,Date date2)
      */
     public static boolean isSameDay(Calendar cal1, Calendar cal2) {
         if (cal1 == null || cal2 == null) {

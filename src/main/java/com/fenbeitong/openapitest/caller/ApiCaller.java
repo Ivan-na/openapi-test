@@ -200,7 +200,7 @@ public class ApiCaller<T extends BizCommonParams, R> {
      * @author Created by ivan on 下午3:51 18-11-22.
      * <p>//TODO generateSign
      **/
-    private String generateSign(String timestamp, String data, String signKey) throws UnsupportedEncodingException {
+    private String generateSign(String timestamp, String data, String signKey) {
         LOGGER.info("timestamp=" + timestamp + "&data=" + data + "&sign_key=" + signKey);
         return DigestUtils.md5DigestAsHex(("timestamp=" + timestamp + "&data=" + data + "&sign_key=" + signKey).getBytes(StandardCharsets.UTF_8));
     }
@@ -219,7 +219,7 @@ public class ApiCaller<T extends BizCommonParams, R> {
             for (String key : keySet) {
                 String value = params.get(key);
                 if (StringUtils.isNotBlank(value)) {
-                    url = StringUtils.join(url, key, "=", value.toString(), "&");
+                    url = StringUtils.join(url, key, "=", value, "&");
                 }
             }
             return url.substring(0, url.length() - 1);

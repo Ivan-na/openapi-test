@@ -55,7 +55,7 @@ public class RestTemplateUtil {
         if (inputHeader != null) {
             Set<String> keys = inputHeader.keySet();
             for (Iterator<String> i = keys.iterator(); i.hasNext(); ) {
-                String key = (String) i.next();
+                String key = i.next();
                 httpHeaders.add(key, inputHeader.get(key).toString());
             }
         }
@@ -89,7 +89,7 @@ public class RestTemplateUtil {
         if (inputHeader != null) {
             Set<String> keys = inputHeader.keySet();
             for (Iterator<String> i = keys.iterator(); i.hasNext(); ) {
-                String key = (String) i.next();
+                String key = i.next();
                 httpHeaders.add(key, inputHeader.get(key).toString());
             }
         }
@@ -182,7 +182,7 @@ public class RestTemplateUtil {
         if (inputHeader != null) {
             Set<String> keys = inputHeader.keySet();
             for (Iterator<String> i = keys.iterator(); i.hasNext(); ) {
-                String key = (String) i.next();
+                String key = i.next();
                 httpHeaders.add(key, inputHeader.get(key).toString());
             }
         }
@@ -225,7 +225,7 @@ public class RestTemplateUtil {
         if (inputHeader != null) {
             Set<String> keys = inputHeader.keySet();
             for (Iterator<String> i = keys.iterator(); i.hasNext(); ) {
-                String key = (String) i.next();
+                String key = i.next();
                 httpHeaders.add(key, inputHeader.get(key).toString());
             }
         }

@@ -34,7 +34,6 @@ public class ValueHelper {
      * 将List中bean的属性及属性值转化为Map对象
      *
      * @param list
-     * @param map
      * @param ignoreProperties
      * @return
      */
