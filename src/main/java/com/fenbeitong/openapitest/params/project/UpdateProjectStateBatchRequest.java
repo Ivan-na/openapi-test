@@ -15,16 +15,16 @@ import java.util.List;
  * Created by ivan on 18-11-23 - 下午4:59.
  **/
 @Data
-public class UpdateStateBatchRequest {
+public class UpdateProjectStateBatchRequest {
     /**
      * state : 0
      * idType : 1
      * idList : ["12341234","21234324"]
      */
     @ApiModelProperty(value = "0停用 1启用", example = "1", required = false)
-    private int state;
+    private Integer state;
     @ApiModelProperty(value = "自建Id 1，第三方Id 2", example = "2", required = false)
-    private int idType;
+    private Integer idType;
     @ApiModelProperty(value = "项目ID", example = "THIRD-M-5253", required = false)
     private List<String> idList;
 

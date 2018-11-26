@@ -15,7 +15,7 @@ import java.util.List;
  * Created by ivan on 18-11-23 - 下午5:01.
  **/
 @Data
-public class QueryRequest {
+public class QueryProjectRequest {
     @ApiModelProperty(value = "项目编码", example = "FBT987197917293", required = false)
     private String code;
     @ApiModelProperty(value = "项目名称", example = "项目名称", required = false)
@@ -23,11 +23,11 @@ public class QueryRequest {
     @ApiModelProperty(value = "负责人姓名", example = "胡汉三", required = false)
     private String memberName;
     @ApiModelProperty(value = "页数", example = "1", required = false)
-    private int pageIndex;
+    private Integer pageIndex;
     @ApiModelProperty(value = "每页条数", example = "20", required = false)
-    private int pageSize;
+    private Integer pageSize;
     @ApiModelProperty(value = "项目状态", example = "1", required = false)
-    private int state;
+    private Integer state;
     @ApiModelProperty(value = "第三方企业ID", example = "5747fbc10f0e60e0709d8d7d", required = false)
     private String companyId;
     @ApiModelProperty(value = "用户ID", example = "59bf74f423445f31bd64bc5c", required = false)

@@ -56,9 +56,9 @@ public class ProjectApi {
     }
 
     /**
-     * @param createRequest :
+     * @param createProjectRequest :
      * @param signKey       :
-     * @return com.fenbeitong.openapitest.models.BizCommonModel<com.fenbeitong.openapitest.models.project.CreateResponse>
+     * @return com.fenbeitong.openapitest.models.BizCommonModel<com.fenbeitong.openapitest.models.project.CreateProjectResponse>
      * @author Created by ivan on 下午5:58 18-11-23.
      * <p>添加第三方项目</p>
      **/
@@ -68,20 +68,20 @@ public class ProjectApi {
             @ApiImplicitParam(paramType = "form", name = "signKey", value = "签名密钥", required = false)
     })
     @PostMapping(value = "/createThirdProject", produces = MediaType.APPLICATION_JSON_UTF8_VALUE, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public BizCommonModel<CreateResponse> createThirdProject(@ApiParam(value = "创建第三方项目参数") @RequestBody BizCommonParams<CreateRequest> createRequest, String signKey) throws UnsupportedEncodingException {
+    public BizCommonModel<CreateProjectResponse> createThirdProject(@ApiParam(value = "创建第三方项目参数") @RequestBody BizCommonParams<CreateProjectRequest> createProjectRequest, String signKey) throws UnsupportedEncodingException {
         if (StringUtils.isNotBlank(signKey)) {
             apiCaller.setSignKey(signKey);
         } else {
             apiCaller.setSignKey(fbtConfig.getSignKey());
         }
-        return apiCaller.postRequest(fbtConfig.getBaseUrl() + CREATE_URL, createRequest, new BizCommonModel<CreateResponse>(), false);
+        return apiCaller.postRequest(fbtConfig.getBaseUrl() + CREATE_URL, createProjectRequest, new BizCommonModel<CreateProjectResponse>(), false);
     }
     /**
      * @author Created by ivan on 下午6:22 18-11-23.
      * <p>批量添加第三方项目</p>
-     * @param createRequest :
+     * @param createProjectBatchRequest :
      * @param signKey :
-     * @return com.fenbeitong.openapitest.models.BizCommonModel<com.fenbeitong.openapitest.models.project.CreateBatchResponse>
+     * @return com.fenbeitong.openapitest.models.BizCommonModel<com.fenbeitong.openapitest.models.project.CreateBatchProjectResponse>
      **/
     @SuppressWarnings("unchecked")
     @ApiOperation(value = "批量添加第三方项目", notes = "批量添加第三方项目")
@@ -89,21 +89,21 @@ public class ProjectApi {
             @ApiImplicitParam(paramType = "form", name = "signKey", value = "签名密钥", required = false)
     })
     @PostMapping(value = "/createThirdProjectBatch", produces = MediaType.APPLICATION_JSON_UTF8_VALUE, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public BizCommonModel<CreateBatchResponse> createThirdProjectBatch(@ApiParam(value = "批量创建第三方项目参数") @RequestBody BizCommonParams<CreateBatchRequest> createRequest, String signKey) throws UnsupportedEncodingException {
+    public BizCommonModel<CreateProjectBatchResponse> createThirdProjectBatch(@ApiParam(value = "批量创建第三方项目参数") @RequestBody BizCommonParams<CreateProjectBatchRequest> createProjectBatchRequest, String signKey) throws UnsupportedEncodingException {
         if (StringUtils.isNotBlank(signKey)) {
             apiCaller.setSignKey(signKey);
         } else {
             apiCaller.setSignKey(fbtConfig.getSignKey());
         }
-        return apiCaller.postRequest(fbtConfig.getBaseUrl() + CREATE_BATCH_URL, createRequest, new BizCommonModel<CreateBatchResponse>(), false);
+        return apiCaller.postRequest(fbtConfig.getBaseUrl() + CREATE_BATCH_URL, createProjectBatchRequest, new BizCommonModel<CreateProjectBatchResponse>(), false);
     }
 
     /**
      * @author Created by ivan on 下午6:23 18-11-23.
      * <p>更新第三方项目</p>
-     * @param updateRequest :
+     * @param updateProjectRequest :
      * @param signKey :
-     * @return com.fenbeitong.openapitest.models.BizCommonModel<com.fenbeitong.openapitest.models.project.UpdateResponse>
+     * @return com.fenbeitong.openapitest.models.BizCommonModel<com.fenbeitong.openapitest.models.project.UpdateProjectResponse>
      **/
     @SuppressWarnings("unchecked")
     @ApiOperation(value = "更新第三方项目", notes = "更新第三方项目")
@@ -111,21 +111,21 @@ public class ProjectApi {
             @ApiImplicitParam(paramType = "form", name = "signKey", value = "签名密钥", required = false)
     })
     @PostMapping(value = "/updateThirdProject", produces = MediaType.APPLICATION_JSON_UTF8_VALUE, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public BizCommonModel<UpdateResponse> updateThirdProject(@ApiParam(value = "更新第三方项目") @RequestBody BizCommonParams<UpdateRequest> updateRequest, String signKey) throws UnsupportedEncodingException {
+    public BizCommonModel<UpdateProjectResponse> updateThirdProject(@ApiParam(value = "更新第三方项目") @RequestBody BizCommonParams<UpdateProjectRequest> updateProjectRequest, String signKey) throws UnsupportedEncodingException {
         if (StringUtils.isNotBlank(signKey)) {
             apiCaller.setSignKey(signKey);
         } else {
             apiCaller.setSignKey(fbtConfig.getSignKey());
         }
-        return apiCaller.postRequest(fbtConfig.getBaseUrl() + UPDATE_URL, updateRequest, new BizCommonModel<UpdateResponse>(), false);
+        return apiCaller.postRequest(fbtConfig.getBaseUrl() + UPDATE_URL, updateProjectRequest, new BizCommonModel<UpdateProjectResponse>(), false);
     }
     
     /**
      * @author Created by ivan on 下午6:23 18-11-23.
      * <p>更新第三方项目状态</p>
-     * @param updateStateRequest : 
+     * @param updateProjectStateRequest :
      * @param signKey : 
-     * @return com.fenbeitong.openapitest.models.BizCommonModel<com.fenbeitong.openapitest.models.project.UpdateStateResponse>
+     * @return com.fenbeitong.openapitest.models.BizCommonModel<com.fenbeitong.openapitest.models.project.UpdateProjectStateResponse>
      **/
     @SuppressWarnings("unchecked")
     @ApiOperation(value = "更新第三方项目状态", notes = "更新第三方项目状态")
@@ -133,20 +133,20 @@ public class ProjectApi {
             @ApiImplicitParam(paramType = "form", name = "signKey", value = "签名密钥", required = false)
     })
     @PostMapping(value = "/updateThirdProjectState", produces = MediaType.APPLICATION_JSON_UTF8_VALUE, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public BizCommonModel<UpdateStateResponse> updateThirdProjectState(@ApiParam(value = "更新第三方项目状态参数") @RequestBody BizCommonParams<UpdateStateRequest> updateStateRequest, String signKey) throws UnsupportedEncodingException {
+    public BizCommonModel<UpdateProjectStateResponse> updateThirdProjectState(@ApiParam(value = "更新第三方项目状态参数") @RequestBody BizCommonParams<UpdateProjectStateRequest> updateProjectStateRequest, String signKey) throws UnsupportedEncodingException {
         if (StringUtils.isNotBlank(signKey)) {
             apiCaller.setSignKey(signKey);
         } else {
             apiCaller.setSignKey(fbtConfig.getSignKey());
         }
-        return apiCaller.postRequest(fbtConfig.getBaseUrl() + UPDATE_STATE_URL, updateStateRequest, new BizCommonModel<UpdateStateResponse>(), false);
+        return apiCaller.postRequest(fbtConfig.getBaseUrl() + UPDATE_STATE_URL, updateProjectStateRequest, new BizCommonModel<UpdateProjectStateResponse>(), false);
     }
     /**
      * @author Created by ivan on 下午6:23 18-11-23.
      * <p>批量更新第三方项目状态</p>
-     * @param updateStateBatchRequest : 
+     * @param updateProjectStateBatchRequest :
      * @param signKey : 
-     * @return com.fenbeitong.openapitest.models.BizCommonModel<com.fenbeitong.openapitest.models.project.UpdateStateBatchResponse>
+     * @return com.fenbeitong.openapitest.models.BizCommonModel<com.fenbeitong.openapitest.models.project.UpdateProjectStateBatchResponse>
      **/
     @SuppressWarnings("unchecked")
     @ApiOperation(value = "批量更新第三方项目状态", notes = "批量更新第三方项目状态")
@@ -154,20 +154,20 @@ public class ProjectApi {
             @ApiImplicitParam(paramType = "form", name = "signKey", value = "签名密钥", required = false)
     })
     @PostMapping(value = "/updateThirdProjectStateByBatch", produces = MediaType.APPLICATION_JSON_UTF8_VALUE, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public BizCommonModel<UpdateStateBatchResponse> updateThirdProjectStateByBatch(@ApiParam(value = "批量更新第三方项目状态参数") @RequestBody BizCommonParams<UpdateStateBatchRequest> updateStateBatchRequest, String signKey) throws UnsupportedEncodingException {
+    public BizCommonModel<UpdateProjectStateBatchResponse> updateThirdProjectStateByBatch(@ApiParam(value = "批量更新第三方项目状态参数") @RequestBody BizCommonParams<UpdateProjectStateBatchRequest> updateProjectStateBatchRequest, String signKey) throws UnsupportedEncodingException {
         if (StringUtils.isNotBlank(signKey)) {
             apiCaller.setSignKey(signKey);
         } else {
             apiCaller.setSignKey(fbtConfig.getSignKey());
         }
-        return apiCaller.postRequest(fbtConfig.getBaseUrl() + UPDATE_STATE_BATCH_URL, updateStateBatchRequest, new BizCommonModel<UpdateStateBatchResponse>(), false);
+        return apiCaller.postRequest(fbtConfig.getBaseUrl() + UPDATE_STATE_BATCH_URL, updateProjectStateBatchRequest, new BizCommonModel<UpdateProjectStateBatchResponse>(), false);
     }
     /**
      * @author Created by ivan on 下午6:23 18-11-23.
      * <p>查询第三方项目详情</p>
-     * @param getRequest : 
+     * @param getProjectRequest :
      * @param signKey : 
-     * @return com.fenbeitong.openapitest.models.BizCommonModel<com.fenbeitong.openapitest.models.project.GetResponse>
+     * @return com.fenbeitong.openapitest.models.BizCommonModel<com.fenbeitong.openapitest.models.project.GetProjectResponse>
      **/
     @SuppressWarnings("unchecked")
     @ApiOperation(value = "查询第三方项目详情", notes = "查询第三方项目详情")
@@ -175,20 +175,20 @@ public class ProjectApi {
             @ApiImplicitParam(paramType = "form", name = "signKey", value = "签名密钥", required = false)
     })
     @PostMapping(value = "/getThirdProject", produces = MediaType.APPLICATION_JSON_UTF8_VALUE, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public BizCommonModel<GetResponse> getThirdProject(@ApiParam(value = "查询第三方项目详情参数", type = "form") @RequestBody BizCommonParams<GetRequest> getRequest, String signKey) throws UnsupportedEncodingException {
+    public BizCommonModel<GetProjectResponse> getThirdProject(@ApiParam(value = "查询第三方项目详情参数", type = "form") @RequestBody BizCommonParams<GetProjectRequest> getProjectRequest, String signKey) throws UnsupportedEncodingException {
         if (StringUtils.isNotBlank(signKey)) {
             apiCaller.setSignKey(signKey);
         } else {
             apiCaller.setSignKey(fbtConfig.getSignKey());
         }
-        return apiCaller.getByPostRequest(fbtConfig.getBaseUrl() + GET_URL, getRequest, new BizCommonModel<GetResponse>(), null);
+        return apiCaller.getByPostRequest(fbtConfig.getBaseUrl() + GET_URL, getProjectRequest, new BizCommonModel<GetProjectResponse>(), null);
     }
     /**
      * @author Created by ivan on 下午6:24 18-11-23.
      * <p>查询第三方项目列表</p>
-     * @param queryRequest : 
+     * @param queryProjectRequest :
      * @param signKey : 
-     * @return com.fenbeitong.openapitest.models.BizCommonModel<com.fenbeitong.openapitest.models.project.QueryResponse>
+     * @return com.fenbeitong.openapitest.models.BizCommonModel<com.fenbeitong.openapitest.models.project.QueryProjectResponse>
      **/
     @SuppressWarnings("unchecked")
     @ApiOperation(value = "查询第三方项目列表", notes = "查询第三方项目列表")
@@ -196,20 +196,20 @@ public class ProjectApi {
             @ApiImplicitParam(paramType = "form", name = "signKey", value = "签名密钥", required = false)
     })
     @PostMapping(value = "/queryThirdProject", produces = MediaType.APPLICATION_JSON_UTF8_VALUE, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public BizCommonModel<QueryResponse> queryThirdProject(@ApiParam(value = "查询第三方项目列表参数", type = "form") @RequestBody BizCommonParams<QueryRequest> queryRequest, String signKey) throws UnsupportedEncodingException {
+    public BizCommonModel<QueryProjectResponse> queryThirdProject(@ApiParam(value = "查询第三方项目列表参数", type = "form") @RequestBody BizCommonParams<QueryProjectRequest> queryProjectRequest, String signKey) throws UnsupportedEncodingException {
         if (StringUtils.isNotBlank(signKey)) {
             apiCaller.setSignKey(signKey);
         } else {
             apiCaller.setSignKey(fbtConfig.getSignKey());
         }
-        return apiCaller.getByPostRequest(fbtConfig.getBaseUrl() + QUERY_URL, queryRequest, new BizCommonModel<GetResponse>(), null);
+        return apiCaller.getByPostRequest(fbtConfig.getBaseUrl() + QUERY_URL, queryProjectRequest, new BizCommonModel<GetProjectResponse>(), null);
     }
     /**
      * @author Created by ivan on 下午6:24 18-11-23.
      * <p>查询第三方项目列表(APP)</p>
-     * @param queryRequest : 
+     * @param queryProjectAppRequest :
      * @param signKey : 
-     * @return com.fenbeitong.openapitest.models.BizCommonList<com.fenbeitong.openapitest.models.project.QueryAppResponse>
+     * @return com.fenbeitong.openapitest.models.BizCommonList<com.fenbeitong.openapitest.models.project.QueryProjectAppResponse>
      **/
     @SuppressWarnings("unchecked")
     @ApiOperation(value = "查询第三方项目列表(APP)", notes = "查询第三方项目列表(APP)")
@@ -217,12 +217,12 @@ public class ProjectApi {
             @ApiImplicitParam(paramType = "form", name = "signKey", value = "签名密钥", required = false)
     })
     @PostMapping(value = "/queryThirdProjectApp", produces = MediaType.APPLICATION_JSON_UTF8_VALUE, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public BizCommonList<QueryAppResponse> queryThirdProjectApp(@ApiParam(value = "查询第三方项目列表参数", type = "form") @RequestBody BizCommonParams<QueryAppRequest> queryRequest, String signKey) throws UnsupportedEncodingException {
+    public BizCommonList<QueryProjectAppResponse> queryThirdProjectApp(@ApiParam(value = "查询第三方项目列表参数", type = "form") @RequestBody BizCommonParams<QueryProjectAppRequest> queryProjectAppRequest, String signKey) throws UnsupportedEncodingException {
         if (StringUtils.isNotBlank(signKey)) {
             apiCaller.setSignKey(signKey);
         } else {
             apiCaller.setSignKey(fbtConfig.getSignKey());
         }
-        return  apiCaller.getListByPostRequest(fbtConfig.getBaseUrl() + QUERY_APP_URL, queryRequest, new BizCommonList<QueryAppResponse>(), null);
+        return  apiCaller.getListByPostRequest(fbtConfig.getBaseUrl() + QUERY_APP_URL, queryProjectAppRequest, new BizCommonList<QueryProjectAppResponse>(), null);
     }
 }

@@ -15,7 +15,7 @@ import java.util.List;
  * Created by ivan on 18-11-23 - 下午5:20.
  **/
 @Data
-public class CreateBatchRequest {
+public class CreateProjectBatchRequest {
     /**
      * companyId : 5afa956523445f22dd043d8a
      * userId : 5afa956523445f22dd043d8b
@@ -29,13 +29,13 @@ public class CreateBatchRequest {
     @ApiModelProperty(value = "用户ID", example = "59bf74f423445f31bd64bc5c", required = false)
     private String userId;
     @ApiModelProperty(value = "自动生成", example = "1", required = false)
-    private int autoFlag;
+    private Integer autoFlag;
     @ApiModelProperty(value = "自动生成传数量 手动生成传projectInfo", example = "100", required = false)
-    private int costCenterNum;
+    private Integer costCenterNum;
     @ApiModelProperty(value = "项目信息", example = "", required = false)
     private List<ProjectInfoBean> projectInfo;
     @Data
-    public static class ProjectInfoBean {
+    private static class ProjectInfoBean {
         /**
          * code : 23648235
          * name : 灭世、霸者

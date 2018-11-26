@@ -39,13 +39,13 @@ public class CreateFrequentRequest {
      */
 
     @ApiModelProperty(value = "1:代表分贝公司, 2:代表第三方企业;  \n注: type=2时,代表所示字段均为第三方数据 ", required = true, example = "2")
-    private int type;
+    private Integer type;
     @ApiModelProperty(value = "可不传  \n但在查询联系人详情/修改/删除等操作时 需要根绝分贝联系人ID进行操作。不能重复", required = false, example = "4575798876576we7654")
     private String thirdFrequentId;
     @ApiModelProperty(value = "同行人姓名  \n当frequentType=1时  则必填", required = false, example = "韩树起-企业员工1")
     private String name;
     @ApiModelProperty(value = "1:男2:女  \n证件类型为非身份证 当idType为1时不需要传递，其他类型需要传递", required = false, example = "1")
-    private int gender;
+    private Integer gender;
     @ApiModelProperty(value = "生日  \n证件类型为非身份证 当idType为1时不需要传递，其他类型需要传递", required = false, example = "1990-02-02")
     private String birthDate;
     @ApiModelProperty(value = "邮件", required = false, example = "shuqi.han@fenbeitong.com")
@@ -59,9 +59,9 @@ public class CreateFrequentRequest {
     @ApiModelProperty(value = "必填", required = true, example = "2305434")
     private String idNumber;
     @ApiModelProperty(value = "证件类型 1.身份证 2.护照 3.回乡证 4.台胞证 5.港澳通行证 6.大陆居民往来台湾通行证 必填", required = true, example = "2")
-    private int idType;
+    private Integer idType;
     @ApiModelProperty(value = "当frequentType为1时，酒店:11, 其它:0,当frequentType为2时，国际机票传:40,  必填,根据业务类型进行相应参数校验，不进行实际业务处理", required = false, example = "40")
-    private int category;
+    private Integer category;
     @ApiModelProperty(value = "姓  \nfrequentType=2时必填，必须使用拼音或者英文", required = false, example = "dave")
     private String familyName;
     @ApiModelProperty(value = "名  \nfrequentType=2时必填，必须使用拼音或者英文", required = false, example = "hansins")
@@ -73,13 +73,13 @@ public class CreateFrequentRequest {
     @ApiModelProperty(value = "国籍名称 中国", required = false, example = "中国")
     private String nationalityName;
     @ApiModelProperty(value = "1:国内 2:国际  \n必填 默认是1", required = true, example = "2")
-    private int frequentType;
+    private Integer frequentType;
     @ApiModelProperty(value = "必填", required = true, example = "5747fbc10f0e60e0709d8d7d")
     private String companyId;
     @ApiModelProperty(value = "当前登录用户ID 必填，为第三方用户ID", required = true, example = "hanshuqi-H5-dev")
     private String ownerId;
     @ApiModelProperty(value = "1：因公  \n必填", required = true, example = "1")
-    private int useType;
+    private Integer useType;
 
     @Override
     public String toString() {

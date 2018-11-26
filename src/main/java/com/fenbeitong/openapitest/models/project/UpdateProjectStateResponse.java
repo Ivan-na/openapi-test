@@ -11,5 +11,5 @@ import lombok.Data;
  * Created by ivan on 18-11-23 - 下午4:58.
  **/
 @Data
-public class UpdateStateResponse {
+public class UpdateProjectStateResponse {
 }

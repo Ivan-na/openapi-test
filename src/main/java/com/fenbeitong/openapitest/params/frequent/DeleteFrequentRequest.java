@@ -25,9 +25,9 @@ public class DeleteFrequentRequest {
      */
 
     @ApiModelProperty(value = "1：根据分贝联系人ID 进行删除   2：根据第三方联系人ID删除  必填", example = "1", required = true)
-    private int frequentIdType;
+    private Integer frequentIdType;
     @ApiModelProperty(value = "frequentIdType = 2时 必填  \ntype = 1 时  代表companyId  ownerId 为分贝企业数据 type = 2 时  代表companyId  ownerId 为第三方企业对应数据 ", example = "1", required = false)
-    private int type;
+    private Integer type;
     @ApiModelProperty(value = "frequentIdType = 2时 必填 ", example = "5747fbc10f0e60e0709d8d7d", required = false)
     private String companyId;
     @ApiModelProperty(value = "frequentIdType = 2时 必填 ", example = "59bf74f423445f31bd64bc5c", required = false)

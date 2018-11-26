@@ -1,0 +1,19 @@
+POST http://localhost:8091/queryThirdFrenqent
+Content-Type: application/json
+
+{
+  "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0b2tlbiIsImFwcElkIjoiNTc0N2ZiYzEwZjBlNjBlMDcwOWQ4ZDdkIiwiaXNzIjoiYXBpIiwiZXhwIjoxNTQ0MDY0ODE5LCJqdGkiOiI1YmZiNjAzM2M1NzRhOTE5Njk4MmMzYmMifQ.R09oI4YciY-Y2gn_ecLg6-u2to34ouyNHV1J36XWQgc",
+  "data": {
+    "companyId": "5747fbc10f0e60e0709d8d7d",
+    "frequentType": "1",
+    "ownerId": "59bf74f423445f31bd64bc5c",
+    "selectedEmployeeId": "59bf74f423445f31bd64bc5c",
+    "type": "1"
+  },
+  "employee_id": "hanshuqi-H5-dev",
+  "employee_type": "1",
+  "request_id": "string",
+  "sign": "string",
+  "timestamp": 0
+}
+

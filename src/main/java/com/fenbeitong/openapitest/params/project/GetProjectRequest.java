@@ -13,7 +13,7 @@ import lombok.Data;
  * Created by ivan on 18-11-23 - 下午5:25.
  **/
 @Data
-public class GetRequest {
+public class GetProjectRequest {
     @ApiModelProperty(value = "项目ID", example = "", required = false)
     private String id;
     @ApiModelProperty(value = "第三方项目ID", example = "THIRD-M-5253", required = false)

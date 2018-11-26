@@ -13,7 +13,7 @@ import lombok.Data;
  * Created by ivan on 18-11-23 - 下午4:55.
  **/
 @Data
-public class UpdateStateRequest {
+public class UpdateProjectStateRequest {
 
     /**
      * id : 5bea7d0737c755266ca5b75b
@@ -25,7 +25,7 @@ public class UpdateStateRequest {
     @ApiModelProperty(value = "第三方项目ID", example = "THIRD-M-5253", required = false)
     private String thirdCostId;
     @ApiModelProperty(value = "项目状态，0停用 1启用", example = "1", required = false)
-    private int state;
+    private Integer state;
 
     @Override
     public String toString() {

@@ -12,7 +12,7 @@ import lombok.Data;
  * Created by ivan on 18-11-23 - 下午5:38.
  **/
 @Data
-public class QueryAppResponse {
+public class QueryProjectAppResponse {
     /**
      * thirdCostId : 1231231
      * code : 723972934
@@ -42,7 +42,7 @@ public class QueryAppResponse {
     private StateBean state;
 
     @Data
-    public static class UsableRangeBean {
+    private static class UsableRangeBean {
         /**
          * key : 1
          * value : 不限
@@ -56,7 +56,7 @@ public class QueryAppResponse {
 
     }
     @Data
-    public static class StateBean {
+    private static class StateBean {
         /**
          * key : 1
          * value : 启用

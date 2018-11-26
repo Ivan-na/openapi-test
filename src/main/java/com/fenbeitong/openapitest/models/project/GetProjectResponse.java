@@ -12,7 +12,7 @@ import java.util.List;
  * @version 1.0
  * Created by ivan on 18-11-23 - 下午5:27.
  **/
-public class GetResponse {
+public class GetProjectResponse {
     /**
      * beginDate : 1970-01-01 00:00:00
      * code : 987197917293

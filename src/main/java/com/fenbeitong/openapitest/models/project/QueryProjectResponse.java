@@ -14,7 +14,7 @@ import java.util.List;
  * Created by ivan on 18-11-23 - 下午5:07.
  **/
 @Data
-public class QueryResponse {
+public class QueryProjectResponse {
     /**
      * count : 8
      * data : [{"code":"723972934","name":"test","beginDate":"2018-03-20 10:10:00","end_date":"2018-03-21 10:10:00","memberName":"","usableRange":{"key":1,"value":"不限"},"state":{"key":1,"value":"启用"}},{"code":"723972934","name":"test","beginDate":"2018-03-20 10:10:00","endDate":"2018-03-21 10:10:00","memberName":"","usableRange":{"key":1,"value":"不限"},"state":{"key":1,"value":"启用"}}]
@@ -59,7 +59,7 @@ public class QueryResponse {
         private StateBean state;
 
         @Data
-        public static class UsableRangeBean {
+        static class UsableRangeBean {
             /**
              * key : 1
              * value : 不限
@@ -71,7 +71,7 @@ public class QueryResponse {
             private String value;
         }
         @Data
-        public static class StateBean {
+        static class StateBean {
             /**
              * key : 1
              * value : 启用
