@@ -35,8 +35,10 @@ public class CreateProjectRequest {
 
     @ApiModelProperty(value = "企业ID", example = "5747fbc10f0e60e0709d8d7d", required = false)
     private String companyId;
-    @ApiModelProperty(value = "", example = "", required = false)
+    @ApiModelProperty(value = "项目创建人", example = "hanshuqi-H5-dev", required = false)
     private String userId;
+    @ApiModelProperty(value = "成员类型和部门类型  type =1 分贝 =2  第三方员工Id", example = "2", required = false)
+    private String type;
     @ApiModelProperty(value = "第三方项目ID", example = "THIRD-M-5253", required = false)
     private String thirdCostId;
     @ApiModelProperty(value = "项目编号", example = "FBT987197917293", required = false)
@@ -70,7 +72,7 @@ public class CreateProjectRequest {
          * isManager : true
          * memberType : 2
          */
-        @ApiModelProperty(value = "ID", example = "59bf74f423445f31bd64bc5c", required = false)
+        @ApiModelProperty(value = "ID", example = "hanshuqi-H5-dev", required = false)
         private String memberId;
         @ApiModelProperty(value = "姓名", example = "胡汉三", required = false)
         private String memberName;
@@ -86,7 +88,7 @@ public class CreateProjectRequest {
          * memberName : 李四
          * isManager : false
          */
-        @ApiModelProperty(value = "ID", example = "", required = false)
+        @ApiModelProperty(value = "ID", example = "hanshuqi-H5-dev ", required = false)
         private String memberId;
         @ApiModelProperty(value = "姓名", example = "尼古拉斯。Cage", required = false)
         private String memberName;
