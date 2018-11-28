@@ -24,8 +24,10 @@ public class UpdateProjectStateRequest {
     private String id;
     @ApiModelProperty(value = "第三方项目ID", example = "THIRD-M-5253", required = false)
     private String thirdCostId;
-    @ApiModelProperty(value = "项目状态，0停用 1启用", example = "1", required = false)
+    @ApiModelProperty(value = "项目状态，0停用 1启用", example = "1", required = true)
     private Integer state;
+    @ApiModelProperty(value = "企业ID", example = "5747fbc10f0e60e0709d8d7d", required = true)
+    private Integer companyId;
 
     @Override
     public String toString() {

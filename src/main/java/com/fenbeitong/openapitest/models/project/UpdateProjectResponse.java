@@ -12,4 +12,5 @@ import lombok.Data;
  **/
 @Data
 public class UpdateProjectResponse {
+    private String id;
 }

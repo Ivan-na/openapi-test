@@ -12,4 +12,6 @@ import lombok.Data;
  **/
 @Data
 public class CreateProjectBatchResponse {
+    private String id;
+    private String thirdCostId;
 }

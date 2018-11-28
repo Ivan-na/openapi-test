@@ -34,7 +34,8 @@ public class UpdateProjectRequest {
      * member : [{"memberId":"123917239717","memberName":"李四","isManager":false},{"memberId":"123917239718","memberName":"张三","isManager":false}]
      * memberDept : [{"memberId":"123917239717","memberName":"研发部","isManager":false},{"memberId":"123917239718","memberName":"研发部","isManager":false}]
      */
-
+    @ApiModelProperty(value = "1   manager.memberId    member.memberId  均为分贝ID memberDept.memberId 分贝部门ID  2:第三方ID", example = "2", required = false)
+    private String type;
     @ApiModelProperty(value = "企业ID", example = "5747fbc10f0e60e0709d8d7d", required = false)
     private String companyId;
     @ApiModelProperty(value = "", example = "", required = false)
@@ -76,7 +77,7 @@ public class UpdateProjectRequest {
          * isManager : true
          */
 
-        @ApiModelProperty(value = "ID", example = "59bf74f423445f31bd64bc5c", required = false)
+        @ApiModelProperty(value = "ID", example = "hanshuqi-H5-dev", required = false)
         private String memberId;
         @ApiModelProperty(value = "姓名", example = "胡汉三", required = false)
         private String memberName;
@@ -131,9 +132,9 @@ public class UpdateProjectRequest {
          * isManager : false
          */
 
-        @ApiModelProperty(value = "ID", example = "", required = false)
+        @ApiModelProperty(value = "ID", example = "000666", required = false)
         private String memberId;
-        @ApiModelProperty(value = "姓名", example = "未来发明部", required = false)
+        @ApiModelProperty(value = "姓名", example = "XZ部门", required = false)
         private String memberName;
         @ApiModelProperty(value = "是否负责人", example = "false", required = false)
         private boolean isManager;

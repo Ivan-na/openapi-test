@@ -1,5 +1,6 @@
 package com.fenbeitong.openapitest.params.project;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.gson.Gson;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -37,8 +38,8 @@ public class CreateProjectRequest {
     private String companyId;
     @ApiModelProperty(value = "项目创建人", example = "hanshuqi-H5-dev", required = false)
     private String userId;
-    @ApiModelProperty(value = "成员类型和部门类型  type =1 分贝 =2  第三方员工Id", example = "2", required = false)
-    private String type;
+    @ApiModelProperty(value = "1  userId,  manager.memberId,   member.memberId  均为分贝ID memberDept.memberId 分贝部门ID;  2:第三方ID", example = "2", required = false)
+    private Integer type;
     @ApiModelProperty(value = "第三方项目ID", example = "THIRD-M-5253", required = false)
     private String thirdCostId;
     @ApiModelProperty(value = "项目编号", example = "FBT987197917293", required = false)
@@ -77,6 +78,7 @@ public class CreateProjectRequest {
         @ApiModelProperty(value = "姓名", example = "胡汉三", required = false)
         private String memberName;
         @ApiModelProperty(value = "是否负责人", example = "true", required = false)
+        @JsonProperty(value="isManager")
         private boolean isManager;
         @ApiModelProperty(value = "2是部门3是员工", example = "3", required = false)
         private Integer memberType;
@@ -93,6 +95,7 @@ public class CreateProjectRequest {
         @ApiModelProperty(value = "姓名", example = "尼古拉斯。Cage", required = false)
         private String memberName;
         @ApiModelProperty(value = "是否负责人", example = "false", required = false)
+        @JsonProperty(value="isManager")
         private boolean isManager;
     }
     @Data
@@ -107,6 +110,7 @@ public class CreateProjectRequest {
         @ApiModelProperty(value = "姓名", example = "未来科技部", required = false)
         private String memberName;
         @ApiModelProperty(value = "是否负责人", example = "false", required = false)
+        @JsonProperty(value="isManager")
         private boolean isManager;
     }
 

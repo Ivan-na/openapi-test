@@ -89,13 +89,13 @@ public class ProjectApi {
             @ApiImplicitParam(paramType = "form", name = "signKey", value = "签名密钥", required = false)
     })
     @PostMapping(value = "/createThirdProjectBatch", produces = MediaType.APPLICATION_JSON_UTF8_VALUE, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public BizCommonModel<CreateProjectBatchResponse> createThirdProjectBatch(@ApiParam(value = "批量创建第三方项目参数") @RequestBody BizCommonParams<CreateProjectBatchRequest> createProjectBatchRequest, String signKey) throws UnsupportedEncodingException {
+    public BizCommonList<CreateProjectBatchResponse> createThirdProjectBatch(@ApiParam(value = "批量创建第三方项目参数") @RequestBody BizCommonParams<CreateProjectBatchRequest> createProjectBatchRequest, String signKey) throws UnsupportedEncodingException {
         if (StringUtils.isNotBlank(signKey)) {
             apiCaller.setSignKey(signKey);
         } else {
             apiCaller.setSignKey(fbtConfig.getSignKey());
         }
-        return apiCaller.postRequest(fbtConfig.getBaseUrl() + CREATE_BATCH_URL, createProjectBatchRequest, new BizCommonModel<CreateProjectBatchResponse>(), false);
+        return apiCaller.getListByPostRequest(fbtConfig.getBaseUrl() + CREATE_BATCH_URL, createProjectBatchRequest, new BizCommonModel<CreateProjectBatchResponse>(), null);
     }
 
     /**

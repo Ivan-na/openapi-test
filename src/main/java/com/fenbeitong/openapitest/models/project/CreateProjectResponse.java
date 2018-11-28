@@ -12,5 +12,5 @@ import lombok.Data;
  **/
 @Data
 public class CreateProjectResponse {
-
+    private String id;
 }

@@ -16,8 +16,10 @@ import lombok.Data;
 public class GetProjectRequest {
     @ApiModelProperty(value = "项目ID", example = "", required = false)
     private String id;
-    @ApiModelProperty(value = "第三方项目ID", example = "THIRD-M-5253", required = false)
+    @ApiModelProperty(value = "第三方项目ID", example = "THIRD-M-5258", required = false)
     private String thirdCostId;
+    @ApiModelProperty(value = "企业ID", example = "5747fbc10f0e60e0709d8d7d", required = false)
+    private String companyId;
 
     @Override
     public String toString() {
