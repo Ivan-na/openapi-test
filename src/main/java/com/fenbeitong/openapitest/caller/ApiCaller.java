@@ -86,7 +86,9 @@ public class ApiCaller<T extends BizCommonParams, R> {
         String resultString = RestTemplateUtil.post(url, String.class, null,inputParameter);
         LOGGER.info("Get Single Request: " + url + " | Response: " + resultString);
         // return
-        return (BizCommonModel<R>) (gson.fromJson(resultString, model.getClass()));
+
+        //return (BizCommonModel<R>) (gson.fromJson(resultString, model.getClass()));
+        return (BizCommonModel<R>) (BizCommonModel.fromJson(resultString,model.getClass()));
     }
     /**
      * @author Created by ivan on 下午3:23 18-11-23.
@@ -97,7 +99,7 @@ public class ApiCaller<T extends BizCommonParams, R> {
      * @param extraParam : 
      * @return com.fenbeitong.openapitest.models.BizCommonList<R>
      **/
-    public BizCommonList<R> getListRequest(String url, T param, R model, Map<String, String> extraParam) throws UnsupportedEncodingException {
+    public BizCommonList<R> getListRequest(String url, T param, R model) throws UnsupportedEncodingException {
         Gson gson = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES).create();
         // set commom
         T paramData = this.initParam(param);
@@ -141,7 +143,8 @@ public class ApiCaller<T extends BizCommonParams, R> {
         String resultString = RestTemplateUtil.post(url, String.class, null, inputParameter);
         LOGGER.info("Get Single Request: " + url + " | Response: " + resultString);
         // return
-        return (BizCommonList<R>) (gson.fromJson(resultString, model.getClass()));
+        //return (BizCommonList<R>) (gson.fromJson(resultString, model.getClass()));
+        return (BizCommonList<R>) (BizCommonList.fromJson(resultString,model.getClass()));
     }
 
 

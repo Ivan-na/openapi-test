@@ -23,8 +23,8 @@ public class GetFrequentRequest {
     private String frequentId;
     @ApiModelProperty(value = "类型    1:分贝企业    2:第三方企业", example = "1", required = true)
     private String type;
-    @ApiModelProperty(value = "1：国内   2：国际   不传默认1", example = "1", required = true)
-    private String frequentType;
+    @ApiModelProperty(value = "区分frequentId   1: 分贝frequentId    2：第三方frequentId", example = "1", required = true)
+    private String frequentIdType;
 
     @Override
     public String toString() {
